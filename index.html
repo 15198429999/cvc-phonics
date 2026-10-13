@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ec">
+  <meta name="description" content="拉动摇杆，发现一个新单词。真实 CVC 词库、短元音练习与点击英文朗读，适合课堂大屏与触屏。">
+  <title>字母摇摇乐 · CVC 自然拼读</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23e99258'/%3E%3Ctext x='32' y='47' font-family='Arial' font-size='48' text-anchor='middle' fill='white'%3Ea%3C/text%3E%3C/svg%3E">
+  <style>
+:root{--paper:#f8f5ec;--ink:#354b48;--muted:#88928b;--green:#48756a;--blue:#467a9b;--orange:#d88648;--reel-height:clamp(136px,18vw,222px)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Trebuchet MS","Microsoft YaHei","PingFang SC",sans-serif;min-height:100vh;background-image:radial-gradient(#a7aa9816 .7px,transparent .7px);background-size:7px 7px}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #dc9556;outline-offset:5px}button:disabled{cursor:default;opacity:.55}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.icon-definitions{position:absolute;width:0;height:0;overflow:hidden}.site-header{max-width:1440px;margin:auto;padding:29px 4.3%;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;gap:12px;align-items:center;color:var(--ink);text-decoration:none;font-size:13px;letter-spacing:1px;font-weight:700}.brand-mark{background:#e8eee2;border:1px solid #d6dfd0;border-radius:14px;padding:10px 8px;font-size:23px;letter-spacing:-3px;transform:rotate(-6deg);color:var(--blue)}.brand-mark span{color:var(--orange)}.brand-sub{display:block;font-size:8px;letter-spacing:2px;margin-top:5px;color:#8b968b}.tools{display:flex;gap:9px}.tool{border:1px solid #dfdfd3;background:#ffffff65;color:#617069;border-radius:24px;padding:9px 14px;display:flex;gap:7px;align-items:center;font-size:12px}.tool svg{width:17px;height:17px}.tool:hover{background:#fff}.intro{text-align:center;margin:10px 0 28px}.eyebrow{font-size:10px;letter-spacing:3px;color:#718779;display:flex;align-items:center;justify-content:center;gap:9px}.eyebrow>span{width:6px;height:6px;border-radius:50%;background:#87a37c}h1{font-size:clamp(34px,4.1vw,54px);letter-spacing:2px;line-height:1.4;margin:10px 0 14px;font-weight:800}.title-accent{position:relative;color:var(--green)}.title-accent svg{position:absolute;bottom:-9px;left:0;width:100%;height:15px;color:#dda064;stroke-width:5}.title-star{display:inline-block;color:#dda064;font-weight:400;font-size:32px;transform:translate(12px,-18px) rotate(10deg)}.intro p{font-size:13px;color:#8a948c;letter-spacing:1px;margin:0}.vowel-picker{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto 32px}.picker-label{font-size:12px;color:#7c8880}.filters{display:flex;gap:4px;padding:5px;background:#eeeee4;border:1px solid #e4e4d8;border-radius:30px}.filters button{border:0;color:#828c80;background:transparent;border-radius:22px;min-width:40px;height:33px;font-size:19px;font-weight:600}.filters button:first-child{font-size:12px;min-width:57px}.filters button[aria-pressed=true]{background:var(--green);color:white;box-shadow:0 2px 3px #305a4222}.filters button:hover:not([aria-pressed=true]){background:#fff8}.play-area{position:relative;width:min(900px,94vw);margin:auto;padding:0 46px 21px}.machine-shell{position:relative;padding-right:58px}.machine{position:relative;border:2px solid #a3baac;border-radius:32px;padding:24px 34px 20px;background:linear-gradient(145deg,#f0f5eb,#dce8da);box-shadow:inset 0 3px 0 #ffffffe0,0 8px 0 #b0c3b0,0 11px 0 #93ab97,0 26px 36px -16px #64775d45}.machine-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.machine-badge{font-size:9px;letter-spacing:2.5px;color:#6a8572;border:1px solid #b6c7b2;border-radius:5px;padding:6px 10px;background:#f6f8ef80}.ready-light{display:flex;align-items:center;gap:6px;font-size:10px;color:#809281;letter-spacing:1px}.ready-light i{height:6px;width:6px;background:#86a56e;border-radius:50%;box-shadow:0 0 0 3px #89a87215}.reel-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center;font-size:12px;color:#6e909e;margin-bottom:11px;letter-spacing:2px}.reel-labels>span:nth-child(2){color:#c48c5d}.reel-labels small{font-size:7px;letter-spacing:1.4px;display:block;margin-top:5px;opacity:.75}.reel-bed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:11px;border-radius:19px;background:#b2c0ad;box-shadow:inset 0 3px 6px #73857255,0 1px 0 #fff}.reel{position:relative;height:var(--reel-height);overflow:hidden;background:#fffefa;border:1px solid #bbc7bb;border-radius:11px;box-shadow:0 3px 2px #72816b35}.reel::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:10px;background:linear-gradient(#78886b15,transparent 18%,transparent 82%,#78886b18);box-shadow:inset 0 3px 8px #75816d1c}.reel.vowel{background:#fff7ea;border-color:#d8cab1}.strip{color:var(--blue);will-change:transform}.strip>span{height:var(--reel-height);display:flex;align-items:center;justify-content:center;font-family:"Century Gothic","Trebuchet MS",Arial,sans-serif;font-size:clamp(100px,14vw,180px);line-height:1;font-weight:500;padding-bottom:16px}.vowel .strip{color:var(--orange)}.blend-line{display:flex;align-items:center;justify-content:center;gap:7px;margin:16px auto 13px;opacity:.55}.blend-line span{height:1px;width:34%;background:#9db49a}.blend-line i{height:5px;width:5px;border-radius:50%;background:#9bb096}.machine-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:36px}.little-label{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:1px;color:#8a9d86}.little-label i{height:5px;width:5px;border-radius:50%;background:#99ad8a}.speak-button{border:1px solid #b0c2a8;background:#f6f8ee;color:#577b63;box-shadow:0 2px 0 #b4c6ac;border-radius:22px;padding:8px 15px;display:flex;align-items:center;gap:7px;font-size:12px;white-space:nowrap}.speak-button:hover{background:white}.speak-button svg{width:19px;height:19px}.speak-button.speaking{background:#fff0d9;border-color:#deb17a;color:#bb7b36}.screw{position:absolute;width:7px;height:7px;border:1px solid #a2b49d;border-radius:50%;box-shadow:0 1px 0 #fff9}.screw::after{content:"";position:absolute;left:1px;right:1px;top:2px;height:1px;background:#a2b49d;transform:rotate(-35deg)}.top-left{left:15px;top:15px}.top-right{right:15px;top:15px}.bottom-left{left:15px;bottom:15px}.bottom-right{right:15px;bottom:15px}.machine-foot{position:absolute;bottom:-18px;width:55px;height:12px;background:#8d9f86;border-radius:0 0 7px 7px;z-index:-1}.foot-left{left:45px}.foot-right{right:105px}.lever{--pull:0px;position:absolute;right:0;top:73px;width:75px;height:270px;background:none;border:0;padding:0;touch-action:none;user-select:none;color:#9d9c87}.lever-anchor{position:absolute;left:-9px;top:145px;width:34px;height:50px;border-radius:0 10px 10px 0;background:linear-gradient(90deg,#8fa18a,#b5c3ac 60%,#839b7e);box-shadow:0 3px 0 #7b9175}.lever-track{position:absolute;left:26px;top:39px;height:165px;width:16px;border-radius:8px;background:#d9dbcb;box-shadow:inset 1px 2px 3px #8d9c7840}.lever-arm{position:absolute;left:28px;top:calc(30px + var(--pull));width:13px;height:calc(146px - var(--pull));border-radius:8px;background:linear-gradient(90deg,#a1a797,#ecece2 43%,#999f8c);box-shadow:2px 1px 2px #7c82661f}.lever-ball{position:absolute;left:5px;top:calc(1px + var(--pull));width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#f4be8e 1%,#eba875 28%,#d88951 68%,#bf7543 100%);box-shadow:inset -3px -5px 0 #b9714230,0 5px 0 #b9754440,0 9px 12px #9b8b5b25}.lever-ball:before{content:"";position:absolute;top:10px;left:13px;width:17px;height:9px;border-radius:50%;background:#ffe4be80;transform:rotate(-30deg)}.lever-cue{position:absolute;top:214px;left:10px;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;letter-spacing:2px;color:#a3a18b}.lever-cue svg{width:21px;height:21px;opacity:.75}.lever.returning .lever-ball,.lever.returning .lever-arm{transition:top .25s cubic-bezier(.2,1.4,.4,1),height .25s cubic-bezier(.2,1.4,.4,1)}.lever[aria-disabled=true]{cursor:wait}.float-star{position:absolute;color:#c6cdba}.star-left{left:7px;top:115px;font-size:28px;transform:rotate(15deg)}.star-right{right:1px;top:14px;font-size:45px;color:#d8bb84;transform:rotate(10deg)}.practice-prompt{margin:28px auto 0;display:flex;align-items:center;justify-content:center;gap:9px;min-height:30px;padding:0 16px}.practice-prompt p{font-size:14px;letter-spacing:.7px;margin:0;text-align:center}.prompt-icon{background:#e9ecdd;display:flex;border-radius:50%;padding:6px;color:#91a279}.prompt-icon svg{width:15px;height:15px}.interaction-hint{text-align:center;color:#a5aa9d;font-size:10px;letter-spacing:.5px;margin:11px 10px 30px}.interaction-hint>span{padding:0 10px}kbd{font:inherit;background:#eeefe4;border:1px solid #dddfd1;border-bottom-width:2px;border-radius:4px;padding:2px 6px}footer{max-width:1280px;margin:12px auto 0;padding:18px 4%;border-top:1px solid #e5e5d8;display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#a4a99b;letter-spacing:1px}.footer-tag{font-size:8px;letter-spacing:1.8px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.machine.is-spinning .ready-light i{background:#dba46b}.machine.is-spinning .reel{box-shadow:0 3px 2px #72816b35,inset 0 0 15px #fff}.machine.settled .reel-bed{animation:settle .45s ease-out}@keyframes settle{50%{box-shadow:inset 0 3px 6px #73857255,0 0 0 4px #e8b77355}}
+@media(min-width:1500px){:root{--reel-height:250px}.play-area{width:1050px}.strip>span{font-size:200px}.intro{margin-top:30px}.vowel-picker{margin-bottom:40px}.machine{padding:29px 40px}.lever{top:92px}}
+@media(max-width:650px){:root{--reel-height:clamp(108px,27vw,166px)}.site-header{padding:20px 5%}.brand{font-size:11px;gap:8px}.brand-sub{font-size:6px}.brand-mark{font-size:20px;padding:8px 7px}.tool{padding:9px}.tool span{display:none}.intro{margin:20px 0 24px}.eyebrow{font-size:9px;letter-spacing:2px}h1{margin-top:11px;font-size:38px}.title-star{font-size:25px;transform:translate(5px,-15px)}.intro p{font-size:12px}.vowel-picker{flex-direction:column;gap:9px;margin-bottom:28px}.picker-label{font-size:11px}.filters button{min-width:38px;height:32px}.play-area{padding:0 3px 18px;width:96vw}.machine-shell{padding-right:49px}.machine{padding:21px 14px 16px;border-radius:22px}.machine-heading{margin-bottom:19px}.machine-badge{font-size:6px;letter-spacing:1px;padding:5px 6px}.ready-light{font-size:8px;gap:4px;letter-spacing:0}.ready-light i{height:5px;width:5px}.reel-labels{gap:5px;font-size:10px;letter-spacing:1px}.reel-labels small{font-size:5px;letter-spacing:.6px}.reel-bed{padding:7px;gap:6px;border-radius:12px}.reel{border-radius:7px}.strip>span{font-size:clamp(74px,20vw,124px);padding-bottom:10px}.machine-bottom{justify-content:center}.little-label{display:none}.speak-button{font-size:11px;padding:7px 14px}.blend-line{margin:13px auto 8px}.lever{width:53px;top:62px;height:226px}.lever-ball{width:45px;height:45px;left:6px;top:calc(7px + var(--pull))}.lever-ball:before{width:12px;height:7px;left:10px;top:8px}.lever-arm{left:23px;top:calc(32px + var(--pull));height:calc(121px - var(--pull));width:10px}.lever-track{left:21px;top:40px;height:138px;width:13px}.lever-anchor{top:130px;left:-4px;width:30px;height:40px}.lever-cue{top:185px;left:10px;font-size:9px;gap:3px}.lever-cue svg{width:18px;height:18px}.float-star{display:none}.machine-foot{width:33px}.foot-left{left:28px}.foot-right{right:77px}.practice-prompt{margin-top:22px;gap:7px}.practice-prompt p{font-size:12px;letter-spacing:0}.interaction-hint{font-size:9px;margin-top:12px}footer{margin-top:35px;justify-content:center}.footer-tag{display:none}}
+@media(max-height:760px) and (min-width:651px){:root{--reel-height:175px}.site-header{padding-top:16px;padding-bottom:12px}.intro{margin-top:0;margin-bottom:20px}h1{font-size:42px;margin:7px 0 9px}.vowel-picker{margin-bottom:22px}.machine{padding-top:20px;padding-bottom:14px}.machine-heading{margin-bottom:18px}.strip>span{font-size:142px}.practice-prompt{margin-top:18px}.interaction-hint{margin-bottom:17px}footer{padding-top:12px;padding-bottom:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+</style>
+  
+  
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 4 5 6m0-6-5 6"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3Z"/></symbol>
+  </defs></svg>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="字母摇摇乐首页"><span class="brand-mark">a<span>b</span>c</span><span>小小拼读实验室<span class="brand-sub">THE PHONICS CLUB</span></span></a>
+    <div class="tools"><button id="sound" class="tool" type="button" aria-label="关闭滚动音效" aria-pressed="true"><svg><use href="#i-speaker"/></svg><span>音效开</span></button><button id="fullscreen" class="tool" type="button" aria-label="全屏显示"><svg><use href="#i-expand"/></svg><span>全屏</span></button></div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title"><div class="eyebrow"><span></span>拉一拉 · 拼一拼 · 读一读</div><h1 id="title">字母<span class="title-accent">摇摇乐<svg viewBox="0 0 230 16" aria-hidden="true"><path d="M5 11Q104 0 225 8"/></svg></span><span class="title-star">✳</span></h1><p>拉动摇杆，发现一个新单词。</p></section>
+    <nav class="vowel-picker" aria-label="选择练习的短元音"><span class="picker-label">今天练什么？</span><div class="filters"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="a" aria-pressed="false">a</button><button type="button" data-filter="e" aria-pressed="false">e</button><button type="button" data-filter="i" aria-pressed="false">i</button><button type="button" data-filter="o" aria-pressed="false">o</button><button type="button" data-filter="u" aria-pressed="false">u</button></div></nav>
+    <section class="play-area" aria-label="CVC 单词摇杆机">
+      <div class="float-star star-left" aria-hidden="true">✦</div><div class="float-star star-right" aria-hidden="true">✧</div>
+      <div class="machine-shell">
+        <div class="machine">
+          <span class="screw top-left" aria-hidden="true"></span><span class="screw top-right" aria-hidden="true"></span><span class="screw bottom-left" aria-hidden="true"></span><span class="screw bottom-right" aria-hidden="true"></span>
+          <div class="machine-heading"><span class="machine-badge">CVC WORD MACHINE</span><span class="ready-light"><i></i><span id="machine-state">准备就绪</span></span></div>
+          <div class="reel-labels" aria-hidden="true"><span>辅音 <small>CONSONANT</small></span><span>元音 <small>VOWEL</small></span><span>辅音 <small>CONSONANT</small></span></div>
+          <div class="reel-bed" aria-hidden="true"><div class="reel"><div class="strip"><span>c</span></div></div><div class="reel vowel"><div class="strip"><span>a</span></div></div><div class="reel"><div class="strip"><span>t</span></div></div></div>
+          <div class="blend-line" aria-hidden="true"><span></span><i></i><span></span></div>
+          <div class="machine-bottom"><span class="little-label"><i></i>三个字母，一个新发现</span><button id="speak" class="speak-button" type="button" aria-label="朗读单词"><svg><use href="#i-speaker"/></svg><span>听一听</span></button></div>
+          <div id="word-live" class="sr-only" role="status" aria-live="polite">cat</div>
+        </div>
+        <button id="lever" class="lever" type="button" aria-label="拉动摇杆，抽取新单词" aria-disabled="false"><span class="lever-anchor"></span><span class="lever-track"></span><span class="lever-arm"></span><span class="lever-ball"></span><span class="lever-cue"><svg><use href="#i-arrow"/></svg><span>拉一下</span></span></button>
+        <span class="machine-foot foot-left" aria-hidden="true"></span><span class="machine-foot foot-right" aria-hidden="true"></span>
+      </div>
+    </section>
+    <div class="practice-prompt"><span class="prompt-icon"><svg><use href="#i-star"/></svg></span><p id="prompt" role="status">准备好了吗？拉动右边的摇杆！</p></div>
+    <p class="interaction-hint">点击或下拉摇杆<span>·</span>也可以按 <kbd>空格</kbd> 开始</p>
+  </main>
+  <footer><span>每一次转动，都是一点小进步。</span><span class="footer-tag">SHORT VOWELS · BIG DISCOVERIES</span></footer>
+<script>
+/* Carefully selected regular short-vowel words. No consonant clusters or x. */
+(function (root) {
+  'use strict';
+  const groups = Object.freeze({
+    a: Object.freeze('bag bat cab cap cat dad fan gap ham hat jam lap mad map mat nap pad pan pat rag ram ran sad sat tag tap van wag yam zap'.split(' ')),
+    e: Object.freeze('bed beg bet den fed get hen jet led leg let men met net peg pen pet red ten vet web wet yes'.split(' ')),
+    i: Object.freeze('bib big bin bit did dig dim dip fin fit hid him hip hit kid kit lid lip lit nip pig pin pit rib rid rim rip sit sip tin tip win wig zip'.split(' ')),
+    o: Object.freeze('bog cob cod cog cop cot dog dot fog got hop hot jog log lot mop nod not pod pop pot rob rod rot sob top'.split(' ')),
+    u: Object.freeze('bud bug bun bus but cub cud cup cut dug fun gum gut hug hum hut jug mud mug nut pup rub rug run sub sum sun tub tug'.split(' '))
+  });
+  class WordBag {
+    constructor(random = Math.random) { this.random = random; this.bags = new Map(); }
+    pool(filter) { return filter === 'all' ? Object.values(groups).flat() : [...groups[filter]]; }
+    next(filter = 'all', current = '') {
+      if (filter !== 'all' && !groups[filter]) filter = 'all';
+      let bag = this.bags.get(filter);
+      if (!bag || bag.length === 0) {
+        bag = this.pool(filter);
+        for (let i = bag.length - 1; i > 0; i--) {
+          const j = Math.floor(this.random() * (i + 1));
+          [bag[i], bag[j]] = [bag[j], bag[i]];
+        }
+        this.bags.set(filter, bag);
+      }
+      // Avoid repeating the visible word, including after switching groups.
+      if (bag.length > 1 && bag[bag.length - 1] === current) [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
+      return bag.pop();
+    }
+  }
+  root.CVC = { groups, WordBag };
+  if (typeof module !== 'undefined') module.exports = root.CVC;
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+<script>
+(() => {
+  'use strict';
+  const $ = s => document.querySelector(s);
+  const machine = $('.machine'), lever = $('#lever'), speak = $('#speak'), sound = $('#sound');
+  const reels = [...document.querySelectorAll('.reel')];
+  const filters = [...document.querySelectorAll('[data-filter]')];
+  const bag = new CVC.WordBag();
+  const saved = (() => { try { return JSON.parse(localStorage.getItem('phonics-prefs')) || {}; } catch { return {}; } })();
+  let filter = ['all','a','e','i','o','u'].includes(saved.filter) ? saved.filter : 'all';
+  let muted = saved.muted === true, busy = false, current = '', audio, pointer = null, speaking = false;
+  let suppressClickUntil = 0, speechTimer, speechId = 0;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const pools = ['bcdfghjklmnpqrstvwxyz','aeiou','bcdfghjklmnpqrstvwxyz'];
+  const save = () => { try { localStorage.setItem('phonics-prefs', JSON.stringify({filter, muted})); } catch {} };
+  const prompt = text => { $('#prompt').textContent = text; };
+  function paintWord(word) {
+    current = word;
+    reels.forEach((reel, i) => { const strip = reel.firstElementChild; strip.style.transform = ''; strip.replaceChildren(Object.assign(document.createElement('span'), {textContent:word[i]})); });
+    $('#word-live').textContent = word;
+    speak.setAttribute('aria-label', '朗读单词 ' + word);
+  }
+  function paintControls() {
+    filters.forEach(b => { b.setAttribute('aria-pressed', String(b.dataset.filter === filter)); b.disabled = busy; });
+    sound.setAttribute('aria-pressed', String(!muted));
+    sound.setAttribute('aria-label', muted ? '开启滚动音效' : '关闭滚动音效');
+    sound.querySelector('use').setAttribute('href', muted ? '#i-mute' : '#i-speaker');
+    sound.querySelector('span').textContent = muted ? '音效关' : '音效开';
+    lever.setAttribute('aria-disabled', String(busy));
+    speak.disabled = busy;
+    $('#machine-state').textContent = busy ? '发现新单词' : '准备就绪';
+  }
+  function initAudio() {
+    if (muted) return;
+    try { const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return; audio ||= new AC(); if (audio.state === 'suspended') audio.resume().catch(() => {}); } catch {}
+  }
+  function tone(frequency, duration = .045, volume = .018) {
+    if (muted || !audio || audio.state !== 'running') return;
+    try { const osc = audio.createOscillator(), gain = audio.createGain(), now = audio.currentTime;
+      osc.type = 'sine'; osc.frequency.setValueAtTime(frequency, now); osc.frequency.exponentialRampToValueAtTime(frequency*.75, now+duration);
+      gain.gain.setValueAtTime(volume, now); gain.gain.exponentialRampToValueAtTime(.001, now+duration);
+      osc.connect(gain); gain.connect(audio.destination); osc.start(now); osc.stop(now+duration);
+      osc.onended = () => { osc.disconnect(); gain.disconnect(); };
+    } catch {}
+  }
+  function stopSpeech() {
+    speechId++; clearTimeout(speechTimer); speaking = false; speak.classList.remove('speaking'); speak.querySelector('span').textContent = '听一听';
+    try { window.speechSynthesis?.cancel(); } catch {}
+  }
+  function returnLever() { lever.classList.add('returning'); lever.style.setProperty('--pull','0px'); }
+  async function spin() {
+    if (busy) return;
+    busy = true; stopSpeech(); initAudio(); paintControls(); machine.classList.remove('settled'); machine.classList.add('is-spinning');
+    prompt('字母转呀转，新单词马上来…');
+    lever.classList.add('returning'); lever.style.setProperty('--pull','78px');
+    setTimeout(returnLever, 140);
+    const target = bag.next(filter,current), previous = current;
+    const timer = setInterval(() => tone(280 + Math.random()*180), 115);
+    try {
+      await Promise.all(reels.map(async (reel,i) => {
+        const strip = reel.firstElementChild;
+        if (reduced.matches || !strip.animate) {
+          await new Promise(resolve => setTimeout(resolve, 180+i*110));
+        } else {
+          const length = 19 + i*4, nodes = [];
+          for (let j=0;j<=length;j++) nodes.push(Object.assign(document.createElement('span'),{textContent:j===0?previous[i]:j===length?target[i]:pools[i][Math.floor(Math.random()*pools[i].length)]}));
+          strip.replaceChildren(...nodes);
+          const animation = strip.animate([{transform:'translateY(0)'},{transform:`translateY(-${100*length/(length+1)}%)`}],{duration:1450+i*260,easing:'cubic-bezier(.15,.6,.16,1)',fill:'forwards'});
+          try { await animation.finished; } catch {} finally { animation.cancel(); }
+        }
+        strip.replaceChildren(Object.assign(document.createElement('span'),{textContent:target[i]}));
+        tone(510+i*140,.08,.035);
+      }));
+      paintWord(target); machine.classList.add('settled'); prompt('试着把三个音连起来，读一读！');
+    } finally { clearInterval(timer); busy=false; machine.classList.remove('is-spinning'); paintControls(); returnLever(); }
+  }
+  lever.addEventListener('pointerdown', e => {
+    if (busy || !e.isPrimary || (e.pointerType==='mouse' && e.button!==0)) return;
+    pointer = {id:e.pointerId,x:e.clientX,y:e.clientY,delta:0,moved:0};
+    lever.classList.remove('returning'); lever.setPointerCapture(e.pointerId);
+  });
+  lever.addEventListener('pointermove', e => {
+    if (!pointer || pointer.id!==e.pointerId) return;
+    pointer.delta = Math.max(0,Math.min(85,e.clientY-pointer.y));
+    pointer.moved = Math.max(pointer.moved,Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y));
+    lever.style.setProperty('--pull',pointer.delta+'px');
+  });
+  lever.addEventListener('pointerup', e => {
+    if (!pointer || pointer.id!==e.pointerId) return;
+    const p = pointer; pointer=null; suppressClickUntil=performance.now()+500; returnLever();
+    if (lever.hasPointerCapture(e.pointerId)) lever.releasePointerCapture(e.pointerId);
+    if (p.delta>=28 || p.moved<9) spin();
+  });
+  const cancelDrag = () => { if (pointer) {pointer=null;suppressClickUntil=performance.now()+500;returnLever();} };
+  lever.addEventListener('pointercancel',cancelDrag); lever.addEventListener('lostpointercapture',cancelDrag);
+  window.addEventListener('blur',cancelDrag);
+  lever.addEventListener('click',e => { if (e.detail===0 || performance.now()>suppressClickUntil) spin(); });
+  document.addEventListener('keydown', e => {
+    if (e.code!=='Space' || e.repeat || e.altKey || e.ctrlKey || e.metaKey || e.target.closest('button,a,input,textarea,select,[contenteditable=true]')) return;
+    e.preventDefault(); spin();
+  });
+  filters.forEach(b => b.addEventListener('click',() => {
+    if (busy || b.dataset.filter===filter) return;
+    stopSpeech(); filter=b.dataset.filter;save();paintControls();paintWord(bag.next(filter,current));
+    prompt(filter==='all'?'五个短元音，一起练一练！':`现在练习短元音 ${filter}，拉动摇杆继续。`);
+  }));
+  sound.addEventListener('click',() => { muted=!muted;save();paintControls();if(!muted){initAudio();tone(600,.06);} });
+  $('#fullscreen').addEventListener('click',async () => {
+    try {
+      if(document.fullscreenElement) await document.exitFullscreen();
+      else if(document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
+      else prompt('当前浏览器不支持全屏，可横屏使用。');
+    } catch { prompt('暂时无法进入全屏，可用浏览器全屏功能。'); }
+  });
+  document.addEventListener('fullscreenchange',() => { const active=!!document.fullscreenElement;$('#fullscreen').setAttribute('aria-label',active?'退出全屏':'全屏显示');$('#fullscreen span').textContent=active?'退出全屏':'全屏'; });
+  speak.addEventListener('click',() => {
+    if (busy) return;
+    if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {prompt('当前浏览器不支持朗读，请换用支持英文语音的浏览器。');return;}
+    if(speaking){stopSpeech();return;}
+    stopSpeech();const id=speechId;
+    const synth=window.speechSynthesis, utterance=new SpeechSynthesisUtterance(current);
+    const voices=synth.getVoices();
+    utterance.voice=voices.find(v=>/^en[-_]US$/i.test(v.lang))||voices.find(v=>/^en/i.test(v.lang))||null;
+    utterance.lang=utterance.voice?.lang||'en-US';utterance.rate=.78;utterance.pitch=1;utterance.volume=1;
+    speaking=true;speak.classList.add('speaking');speak.querySelector('span').textContent='朗读中';
+    const done=()=>{if(id!==speechId)return;clearTimeout(speechTimer);speaking=false;speak.classList.remove('speaking');speak.querySelector('span').textContent='听一听';};
+    utterance.onend=done;
+    utterance.onerror=e=>{if(id!==speechId)return;done();if(!['canceled','interrupted'].includes(e.error))prompt('英文语音暂不可用，请检查设备语音与声音设置。');};
+    speechTimer=setTimeout(()=>{if(id===speechId){stopSpeech();prompt('未能完成朗读，请检查设备英文语音与声音设置。');}},10000);
+    try{synth.speak(utterance);}catch{done();prompt('朗读暂不可用，请检查设备英文语音设置。');}
+  });
+  paintControls();paintWord(bag.next(filter));
+  window.addEventListener('pagehide',stopSpeech);
+})();
+
+</script>
+</body>
+</html>
